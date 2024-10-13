@@ -56,6 +56,7 @@ namespace StrategyPatters.Services
             custumerForEdit.CType = newCustomer.CType;
 
 
+
         }
 
         public void DeleteCustomerById(string id)

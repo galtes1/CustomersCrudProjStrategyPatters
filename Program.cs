@@ -9,8 +9,9 @@ namespace StrategyPatters
         {
 
 
-            CrudDbDisconnected crudDbDisconnected = new CrudDbDisconnected();
-            CrudManager crudManager = new CrudManager(crudDbDisconnected);
+            // CrudDbDisconnected crudDbDisconnected = new CrudDbDisconnected();
+            CrudDbMongoDb mongo = new CrudDbMongoDb();
+            CrudManager crudManager = new CrudManager(mongo);
             int choise = 1;
             while (choise != 0)
             {

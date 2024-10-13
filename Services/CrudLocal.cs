@@ -17,7 +17,7 @@ namespace StrategyPatters.Services
 
         static List<Customer> customers = new List<Customer>();
 
-        public static void PrintAllCustomers()
+        public void PrintAllCustomers()
         {
             foreach (Customer c in customers)
             {
@@ -25,7 +25,7 @@ namespace StrategyPatters.Services
             }
         }
 
-        public static void PrintCustomerById(string id)
+        public void PrintCustomerById(string id)
         {
             Customer? c = customers.FirstOrDefault(c => c.CID == id);
             if (c != null)
@@ -38,11 +38,13 @@ namespace StrategyPatters.Services
             }
 
         }
-        public static void CreateNewCustomer(Customer c)
+
+        public void CreateNewCustomer(Customer c)
         {
             customers.Add(c);
             Console.WriteLine("customer added");
         }
+
         public void EditCustomerById(string id, Customer newCustomer)
         {
             int indexOfCustomerToEdit = customers.FindIndex(c => c.CID == id);
@@ -50,13 +52,10 @@ namespace StrategyPatters.Services
             Console.WriteLine("customer has been updated");
         }
 
-        public static void DeleteCustomerById(string id)
+        public void DeleteCustomerById(string id)
         {
             Customer? CustomerToDelete = customers.FirstOrDefault(c => c.CID == id);
             customers.Remove(CustomerToDelete);
         }
-
-
-
     }
 }

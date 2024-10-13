@@ -1,9 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StrategyPatters.Models
 {
     public class Customer
     {
+
+        [NotMapped]
+        public BsonObjectId _id { get; set; }
+
         [Key]
         public string CID { get; set; }
         public string? CName { get; set; }
